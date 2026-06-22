@@ -46,6 +46,19 @@ async def main():
 
     print("Math Response: ",math_response["messages"][-1].content)
 
+    weather_response=await agent.ainvoke(
+        {
+            "messages":[
+                {
+                    "role":"user",
+                    "content":"what is the weather in Mumbai ?"
+                }
+            ]
+        }
+    )
+
+    print("Weather Response: ",weather_response["messages"][-1].content)
+
 asyncio.run(main())
 
 
